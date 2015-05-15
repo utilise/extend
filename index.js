@@ -3,8 +3,8 @@ var is = require('is')
   , keys = require('keys')
   , copy = require('copy')
 
-module.exports = function extend(from){ 
-  return function(to){
+module.exports = function extend(to){ 
+  return function(from){
     keys(from)
       .filter(not(is.in(to)))
       .map(copy(from, to))
